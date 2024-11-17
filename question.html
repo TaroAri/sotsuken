@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CSS設計学習サイト</title>
+  <meta name="description" content="">
+
+  <!--css-->
+  <!-- <link rel="stylesheet" href="css/reset.css"> -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+
+<body>
+
+  <header id="header" class="header">
+
+  </header>
+
+  <div id="wrapper" class="wrapper">
+
+    <main id="main" class="main">
+      <div class="question">
+        <p class="question__text">
+          
+        </p>
+      </div>
+      <div class="choice">
+        <form class="show">
+          <label class="option1">
+            <input type="radio" name="options" value="">
+          </label><br>
+          <label class="option2">
+            <input type="radio" name="options" value="">
+          </label><br>
+          <label class="option3">
+            <input type="radio" name="options" value="">
+          </label><br>
+          <label class="option4">
+            <input type="radio" name="options" value="">
+          </label><br>
+          <label class="option5">
+            <input type="radio" name="options" value="">
+          </label>
+        </form>
+
+        <div class="answer hide">
+          <p class="answer_text">
+
+          </p>
+        </div>
+
+        <button id="submitBtn" class="show">回答</button>
+        <button id="nextBtn" class="hide">次へ</button>
+      </div>
+      
+    </main>
+
+    <footer id="footer" class="footer">
+
+    </footer>
+
+  </div>
+  
+  <script src="./js/script.js"></script>
+</body>
+</html>
