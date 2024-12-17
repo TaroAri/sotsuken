@@ -9,7 +9,7 @@
   <meta name="description" content="">
 
   <!--css-->
-  <!-- <link rel="stylesheet" href="css/reset.css"> -->
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -24,40 +24,56 @@
 
   <div id="wrapper" class="wrapper">
 
-    <main id="main" class="main">
-      <div class="question">
-        <p class="question__text">
-          
-        </p>
-      </div>
-      <div class="choice">
-        <form class="show">
-          <label class="option1">
-            <input type="radio" name="options" value="">
-          </label><br>
-          <label class="option2">
-            <input type="radio" name="options" value="">
-          </label><br>
-          <label class="option3">
-            <input type="radio" name="options" value="">
-          </label><br>
-          <label class="option4">
-            <input type="radio" name="options" value="">
-          </label><br>
-          <label class="option5">
-            <input type="radio" name="options" value="">
-          </label>
-        </form>
+    <main class="question-main">
+      <h1 class="question-title">確認問題</h1>
 
-        <div class="answer hide">
-          <p class="answer_text">
-
+      <div class="window">
+        <div class="question">
+          <h2 class="question__num">問題１</h2>
+          <p class="question__text">
+            
           </p>
         </div>
-
-        <button id="submitBtn" class="show">回答</button>
-        <button id="nextBtn" class="hide">次へ</button>
+        <div class="choice">
+          <form class="show">
+            <label class="option1 options">
+              <input type="radio" name="options" value="">
+            </label>
+            <br>
+            <br>
+            <label class="option2 options">
+              <input type="radio" name="options" value="">
+            </label>
+            <br>
+            <br>
+            <label class="option3 options">
+              <input type="radio" name="options" value="">
+            </label>
+            <br>
+            <br>
+            <label class="option4 options">
+              <input type="radio" name="options" value="">
+            </label>
+            <br>
+            <br>
+            <label class="option5 options">
+              <input type="radio" name="options" value="">
+            </label>
+          </form>
+  
+          <div class="answer hide">
+            <p class="answer__text"></p>
+            <p class="answer__explain"></p>
+          </div>
+  
+          <div class="tool-bar choice_tool-bar">
+            <p class="counter">1 / 5</p>
+            <button id="submitBtn" class="button show">回答</button>
+          <button id="nextBtn" class="button hide">次へ</button>
+          </div>
+        </div>
       </div>
+
       
     </main>
 
@@ -67,6 +83,6 @@
 
   </div>
   
-  <script src="./js/script.js"></script>
+  <script type="module" src="./js/question.js"></script>
 </body>
 </html>
