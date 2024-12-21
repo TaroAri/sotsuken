@@ -3,21 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>LCSSAS | CSS設計学習サイト</title>
 
   <!--css-->
-  <!-- <link rel="stylesheet" href="./css/reset.css"> -->
+  <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-  <p>お疲れさまでした!</p>
-  <p id="score"></p>
-  <a href="./index.html" class="button">TOP</a>
-  <a href="./section.html" class="oneMore button">もう1度やる</a>
-  <a href="./section.html" class="nextSection button">次のセクションへ</a>
 
+  <canvas id="canvas"></canvas>
+
+  <section class="body finish-body">
+    <header class="header">
+      <div class="header__container">
+        <img class="logo header__logo" src="./img/logo.png" alt="">
+  
+        <nav class="global-nav">
+          <ul class="global-nav__item">
+            <li>
+              <a class="global-nav__link" href="./index.html#first-view">Top</a>
+            </li>
+            <li>
+              <a class="global-nav__link" href="./index.html#about">About</a>
+            </li>
+            <li>
+              <a class="global-nav__link" href="./index.html#sections">Sections</a>
+            </li>
+            <li>
+              <a class="global-nav__link" href="./index.html#practice">Practice</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <main class="finish-main">
+      <div class="finish-container">
+        <div class="feed-back">
+          <p class="score"><span class="score__num"></span>/5問正解</p>
+          <p class="feed-back__text">
+            お疲れ様でした。<br>
+            <span class="feed-back__mesage"></span>
+          </p>
+          <p class="next-section">" CSS設計 "</p>
+        </div>
     
+        <div class="tool-bar finish__tool-bar">
+          <button class="button button_Return back finish__back">Retry</button>
+          <button class="button button_Next next finish__next">Next</button>
+        </div>
+      </div>
+    </main>
 
-  <script src="./js/finish.js"></script>
+
+    <footer id="footer" class="footer">
+      <p class="copy-right">&copy; 2025 LCSSAS All Right Reserved.</p>
+    </footer>
+  </section>
+
+  <script type="module" src="./js/finish.js"></script>
 </body>
 </html>

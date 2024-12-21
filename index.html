@@ -5,8 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CSS設計学習サイト</title>
+  <title>LCSSAS | CSS設計学習サイト</title>
   <meta name="description" content="">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 
   <!--css-->
   <link rel="stylesheet" href="css/reset.css">
@@ -18,31 +22,203 @@
 
 <body>
 
-  <header id="header" class="header">
+  <canvas id="canvas"></canvas>
 
-  </header>
+  <section class="body main-body">
+    <header class="header main-body__header">
+      <div class="header__container">
+        <img class="logo header__logo" src="./img/logo.png" alt="">
 
-  <div id="wrapper" class="wrapper">
-
-    <main id="main" class="main">
-        <section class="first-view">
-          <img src="./img/logo.png" alt="">
-        </section>
-      <a class="learn section" href="./section/section1.html" value="1">CSS設計の基本</a>
-      <a class="learn section" href="./section/section2.html" value="2">BEMの基本</a>
-      <a class="learn section" href="./section/section3.html" value="3">Block</a>
-      <a class="learn section" href="./section/section4.html" value="4">Element</a>
-      <a class="learn section" href="./section/section5.html" value="5">Modifier</a>
-      <a class="learn section" href="./section/section6.html" value="6">Mix</a>
-      <a class="learn" href="./question.html">演習問題</a>
-    </main>
-
-    <footer id="footer" class="footer">
-
-    </footer>
-
-  </div>
+        <nav class="global-nav">
+          <ul class="global-nav__item">
+            <li>
+              <a class="global-nav__link" href="#first-view">Top</a>
+            </li>
+            <li>
+              <a class="global-nav__link" href="#about">About</a>
+            </li>
+            <li>
+              <a class="global-nav__link" href="#sections">Sections</a>
+            </li>
+            <li>
+              <a class="global-nav__link" href="#practice">Practice</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
   
-  <script src="./js/index.js"></script>
+    <div id="wrapper" class="wrapper">
+  
+      <main id="main" class="main">
+
+        <section class="first-view scroll-point" id="first-view">
+          <img class="logo first-view__logo" src="./img/logo.png" alt="">
+        </section>
+
+        <section class="about scroll-point" id="about">
+          <div class="head-container">
+            <h2 class="head-text">About</h2>
+          </div>
+
+          <div class="about__container">
+            <h2 class="about__head">What is <span>"LCSSAS"</span> ?</h2>
+  
+            <p class="about__text">
+              LCSSAS(ラクサス)とは、CSS設計専用の学習サイトです。<br>
+              「普段HTMLやCSSを勉強しているけど、うまくコードが書けない」という人向けに
+              BEMという設計手法を通してCSS設計に触れてもらい、実際に活用できるような力を身に付けることを目的としています。
+            </p>
+          </div>
+
+        </section>
+
+        <section class="sections scroll-point" id="sections">
+          <div class="head-container">
+            <h2 class="head-text">Sections</h2>
+          </div>
+
+          <div class="grid">
+
+            <section class="section section1">
+              <p class="bg-text section__bg-text">Section1</p>
+
+              <img class="timer section__timer" src="./img/7min.png" alt="clock">
+
+              <h3 class="section__head">1. CSS設計の基本</h3>
+
+              <p class="section__text">
+                CSS設計の基本的な部分について学ぶことができます。「良いCSS設計」とは何なのか学んでいきます。<br>
+              </p>
+
+              <div class="link section__link">
+                <a class="link__item page-link" href="section.html" value="1">Learn</a>
+              </div>
+            </section>
+
+            <section class="section section2">
+              <p class="bg-text section__bg-text">Section2</p>
+              
+              <img class="timer section__timer" src="./img/4min.png" alt="clock">
+
+              <h3 class="section__head">2. BEMの基本</h3>
+
+              <p class="section__text">
+                CSS設計の有名な手法の1つである、BEMついて学ぶことができます。<br>
+                主に、BEMにおけるきまりや構成要素について学んでいきます。
+              </p>
+
+              <div class="link section__link">
+                <a class="link__item page-link" href="section.html" value="2">Learn</a>
+              </div>
+            </section>
+
+            <section class="section section3">
+              <p class="bg-text section__bg-text">Section3</p>
+              
+              <img class="timer section__timer" src="./img/4min.png" alt="clock">
+
+              <h3 class="section__head">3. Block</h3>
+
+              <p class="section__text">
+                BEMの構成要素の内の1つであるBlockについて学ぶことができます。<br>
+                命名規則や使い方などを学んでいきます。
+              </p>
+
+              <div class="link section__link">
+                <a class="link__item page-link" href="section.html" value="3">Learn</a>
+              </div>
+            </section>
+
+            <section class="section section4">
+              <p class="bg-text section__bg-text">Section4</p>
+              
+              <img class="timer section__timer" src="./img/5min.png" alt="clock">
+
+              <h3 class="section__head">4. Element</h3>
+
+              <p class="section__text">
+                BEMを構成する要素の1つであるElementについて学ぶことができます。<br>
+                注意点を重点的に学び、そのほかにも命名規則などを学んでいきます。
+              </p>
+
+              <div class="link section__link">
+                <a class="link__item page-link" href="section.html" value="4">Learn</a>
+              </div>
+            </section>
+
+            <section class="section section5">
+              <p class="bg-text section__bg-text">Section5</p>
+              
+              <img class="timer section__timer" src="./img/5min.png" alt="clock">
+
+              <h3 class="section__head">5.  Modifier</h3>
+
+              <p class="section__text">
+                BEMを構成する要素の1つであるModifierについて学ぶことができます。<br>
+                Modifierの中での区分や活用方法などを学んでいきます。
+              </p>
+
+              <div class="link section__link">
+                <a class="link__item page-link" href="section.html" value="5">Learn</a>
+              </div>
+            </section>
+
+            <section class="section section6">
+              <p class="bg-text section__bg-text">Section6</p>
+              
+              <img class="timer section__timer" src="./img/5min.png" alt="clock">
+
+              <h3 class="section__head">6. Mix</h3>
+
+              <p class="section__text">
+                BEMの重要なテクニックといわれているMixについて学ぶことができます。<br>
+                Mixの活用法だけでなく、少し特殊な活用法についても学んでいきます。
+              </p>
+
+              <div class="link section__link">
+                <a class="link__item page-link" href="section.html" value="6">Learn</a>
+              </div>
+            </section>
+
+          </div>
+
+        </section>
+
+        <section class="practice scroll-point" id="practice">
+          <div class="head-container">
+            <h2 class="head-text">Practice</h2>
+          </div>
+
+          <section class="section practice__section">
+            <p class="bg-text section__bg-text">Practice</p>
+            
+            <img class="timer practice__timer section__timer" src="./img/10min.png" alt="clock">
+
+            <h3 class="section__head">Practice</h3>
+
+            <p class="section__text">
+              上記6つのセクションの確認問題をランダムで5問出題します。<br>
+              ぜひ腕試しに挑戦してみてください。
+            </p>
+
+            <div class="link section__link">
+              <a class="link__item link__practice page-link" href="section.html" value="7">Practice</a>
+            </div>
+          </section>
+
+        </section>
+        
+      </main>
+      
+    </div>
+    
+    <footer id="footer" class="footer">
+      <p class="copy-right">&copy; 2025 LCSSAS All Right Reserved.</p>
+    </footer>
+  </section>
+  
+  
+  <script type="module" src="./js/index.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CSS設計学習サイト</title>
+  <title>LCSSAS | CSS設計学習サイト</title>
   <meta name="description" content="">
 
   <!--css-->
@@ -18,8 +18,27 @@
 
 <body>
 
-  <header class="header">
+  <header class="header main-body__header">
+    <div class="header__container">
+      <img class="logo header__logo" src="./img/logo.png" alt="">
 
+      <nav class="global-nav">
+        <ul class="global-nav__item">
+          <li>
+            <a class="global-nav__link" href="./index.html#first-view">Top</a>
+          </li>
+          <li>
+            <a class="global-nav__link" href="./index.html#about">About</a>
+          </li>
+          <li>
+            <a class="global-nav__link" href="./index.html#sections">Sections</a>
+          </li>
+          <li>
+            <a class="global-nav__link" href="./index.html#practice">Practice</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <div class="wrapper">
@@ -27,35 +46,44 @@
     <main class="section-main">
       <aside class="side-bar">
         <ul>
-          <li>TOP</li>
-          <li>CSS設計の基本</li>
-          <li>BEMの基本</li>
-          <li>Block</li>
-          <li>Element</li>
-          <li>Modifier</li>
-          <li>Mix</li>
-          <li>演習問題</li>
+          <li class="side-bar__item side-bar__item1">
+            <a class="page-link" href="./section.html" value="1">CSS設計の基本</a>
+          </li>
+          <li class="side-bar__item side-bar__item2">
+            <a class="page-link" href="./section.html" value="2">BEMの基本</a>
+          </li>
+          <li class="side-bar__item side-bar__item3">
+            <a class="page-link" href="./section.html" value="3">Block</a>
+          </li>
+          <li class="side-bar__item side-bar__item4">
+            <a class="page-link" href="./section.html" value="4">Element</a>
+          </li>
+          <li class="side-bar__item side-bar__item5">
+            <a class="page-link" href="./section.html" value="5">Modifier</a>
+          </li>
+          <li class="side-bar__item side-bar__item6">
+            <a class="page-link" href="./section.html" value="6">Mix</a>
+          </li>
+          <li class="side-bar__item side-bar__item7">
+            <a class="page-link" href="./section.html" value="7">演習問題</a>
+          </li>
         </ul>
       </aside>
 
       <div class="section-container">
-        <h1 class="title">CSS設計の基本</h1>
+        <h1 class="title sections__title">CSS設計の基本</h1>
    
-        <iframe src="./slide/1-1.html" class="canvas" frameborder="0" scrolling="no"></iframe>
+        <iframe src="./slide/1-1.html" class="slide" frameborder="0" scrolling="no"></iframe>
    
-        <div class="tool-bar">
-         <button class="button button_Return">戻る</button>
-         <div class="page-num">1 / 3</div>
-         <button class="button button_Next">次へ</button>
+        <div class="tool-bar section-main__tool-bar">
+         <button class="button button_Return back">Back</button>
+         <div class="page-counter">1 / 3</div>
+         <button class="button button_Next next">Next</button>
         </div>
       </div>
 
 
     </main>
-
-    <footer id="footer" class="footer">
-
-    </footer>
 
   </div>
   
@@ -63,12 +91,12 @@
     <div class="modal">
       <p class="modal__text">確認問題へ進みますか？</p>
       <div class="tool-bar">
-        <button class="button modal__button_return">戻る</button>
-        <button class="button modal__button_next">進む</button>
+        <button class="button back modal__button modal__button_return">Back</button>
+        <button class="button next modal__button modal__button_next">Next</button>
       </div>
     </div>
   </div>
 
-  <script src="./js/section.js"></script>
+  <script type="module" src="./js/section.js"></script>
 </body>
 </html>

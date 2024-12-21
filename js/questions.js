@@ -245,7 +245,7 @@ const questionData = [
   {
     section: 5,
     question: 'Modifierについて当てはまるものはどれですか？',
-    option1: 'Modifierは１つのBlockやElementに複数つけることができます',
+    option1: 'Modifierは１つのBlockやElementに複数つけることができる',
     option2: 'Modifierは1つのBlockやElementに1つしかつけることができない',
     option3: 'ModifierはBlockやElementごとに異なる名前を付ける必要がある',
     option4: 'ModifierはBlockやElementの見た目を完全に変更しなければならない',

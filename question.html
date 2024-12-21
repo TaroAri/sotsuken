@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CSS設計学習サイト</title>
+  <title>LCSSAS | CSS設計学習サイト</title>
   <meta name="description" content="">
 
   <!--css-->
@@ -18,69 +18,109 @@
 
 <body>
 
-  <header id="header" class="header">
+  <header class="header">
+    <div class="header__container">
+      <img class="logo header__logo" src="./img/logo.png" alt="">
 
+      <nav class="global-nav">
+        <ul class="global-nav__item">
+          <li>
+            <a class="global-nav__link" href="./index.html#first-view">Top</a>
+          </li>
+          <li>
+            <a class="global-nav__link" href="./index.html#about">About</a>
+          </li>
+          <li>
+            <a class="global-nav__link" href="./index.html#sections">Sections</a>
+          </li>
+          <li>
+            <a class="global-nav__link" href="./index.html#practice">Practice</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <div id="wrapper" class="wrapper">
+  <div class="wrapper">
 
     <main class="question-main">
-      <h1 class="question-title">確認問題</h1>
+      <aside class="side-bar">
+        <ul>
+          <li class="side-bar__item side-bar__item1">
+            <a class="page-link" href="./section.html" value="1">CSS設計の基本</a>
+          </li>
+          <li class="side-bar__item side-bar__item2">
+            <a class="page-link" href="./section.html" value="2">BEMの基本</a>
+          </li>
+          <li class="side-bar__item side-bar__item3">
+            <a class="page-link" href="./section.html" value="3">Block</a>
+          </li>
+          <li class="side-bar__item side-bar__item4">
+            <a class="page-link" href="./section.html" value="4">Element</a>
+          </li>
+          <li class="side-bar__item side-bar__item5">
+            <a class="page-link" href="./section.html" value="5">Modifier</a>
+          </li>
+          <li class="side-bar__item side-bar__item6">
+            <a class="page-link" href="./section.html" value="6">Mix</a>
+          </li>
+          <li class="side-bar__item side-bar__item7">
+            <a class="page-link" href="./question.html" value="7">演習問題</a>
+          </li>
+        </ul>
+      </aside>
 
-      <div class="window">
-        <div class="question">
-          <h2 class="question__num">問題１</h2>
-          <p class="question__text">
-            
-          </p>
-        </div>
-        <div class="choice">
-          <form class="show">
-            <label class="option1 options">
-              <input type="radio" name="options" value="">
-            </label>
-            <br>
-            <br>
-            <label class="option2 options">
-              <input type="radio" name="options" value="">
-            </label>
-            <br>
-            <br>
-            <label class="option3 options">
-              <input type="radio" name="options" value="">
-            </label>
-            <br>
-            <br>
-            <label class="option4 options">
-              <input type="radio" name="options" value="">
-            </label>
-            <br>
-            <br>
-            <label class="option5 options">
-              <input type="radio" name="options" value="">
-            </label>
-          </form>
+      <div class="question-container">
+        <h1 class="question-title">確認問題</h1>
   
-          <div class="answer hide">
-            <p class="answer__text"></p>
-            <p class="answer__explain"></p>
+        <div class="window">
+          <div class="question">
+            <h2 class="question__num">問題１</h2>
+            <p class="question__text">
+              
+            </p>
           </div>
-  
-          <div class="tool-bar choice_tool-bar">
-            <p class="counter">1 / 5</p>
-            <button id="submitBtn" class="button show">回答</button>
-          <button id="nextBtn" class="button hide">次へ</button>
+          <div class="choice">
+            <form class="show">
+              <label class="option1 options">
+                <input type="radio" name="options" value="">
+              </label>
+              <br>
+              <br>
+              <label class="option2 options">
+                <input type="radio" name="options" value="">
+              </label>
+              <br>
+              <br>
+              <label class="option3 options">
+                <input type="radio" name="options" value="">
+              </label>
+              <br>
+              <br>
+              <label class="option4 options">
+                <input type="radio" name="options" value="">
+              </label>
+              <br>
+              <br>
+              <label class="option5 options">
+                <input type="radio" name="options" value="">
+              </label>
+            </form>
+    
+            <div class="answer hide">
+              <p class="answer__text"></p>
+              <p class="answer__explain"></p>
+            </div>
+    
+            <div class="tool-bar choice_tool-bar">
+              <p class="page-counter">1 / 5</p>
+              <button id="submitBtn" class="button choice__next button__standby show">Answer</button>
+              <button id="nextBtn" class="button next choice__next hide">Next</button>
+            </div>
           </div>
         </div>
       </div>
-
-      
     </main>
-
-    <footer id="footer" class="footer">
-
-    </footer>
-
   </div>
   
   <script type="module" src="./js/question.js"></script>

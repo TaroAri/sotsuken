@@ -1,7 +1,13 @@
-import { questionData } from './questions.js';
+import { questionData  } from './questions.js';
+import { link } from './link.js'
 
 var sectionCount  = Number(sessionStorage.getItem('sectionCount'));
-console.log(sectionCount)
+console.log("section: " + sectionCount);
+
+link();
+
+document.querySelector('.side-bar__item' + sectionCount).classList.add('side-bar__item_active');
+
 
 //表示切り替え
 function displaySwitch() {
@@ -87,12 +93,13 @@ document.getElementById('submitBtn').addEventListener('click', () => {
   const selectedOption = document.querySelector('input[name="options"]:checked');
   
   if (selectedOption == null) {
-    alert('選択してね？');
+    alert('選択してください。');
     return false;
   }
   else if(selectedOption.value == 1){
     correctCount += 1;
     document.querySelector('.answer__text').textContent = "正解";
+    document.querySelector('.answer__text').style.color = "#FF7B7B";
     if(sectionCount < 7){
       document.querySelector(`.answer__explain`).textContent = questionArray[pageCount].explain;
     }else{
@@ -101,6 +108,7 @@ document.getElementById('submitBtn').addEventListener('click', () => {
   }
   else if(selectedOption.value == 2 || selectedOption.value == 3 || selectedOption.value == 4 || selectedOption.value == 5){
     document.querySelector('.answer__text').textContent = "不正解";
+    document.querySelector('.answer__text').style.color = "#000DFF";
     if(sectionCount < 7){
       document.querySelector(`.answer__explain`).textContent = questionArray[pageCount].explain;
     }else{
@@ -108,8 +116,12 @@ document.getElementById('submitBtn').addEventListener('click', () => {
     }
   }
   else {
-    console.log('なんか変だね');
+    console.log('ERROR: value');
   }
+  const button = document.querySelector('.next');
+  button.classList.add('button__standby');
+  button.classList.remove('next');
+
   displaySwitch();
 });
 
@@ -119,9 +131,9 @@ function nextBtnClick() {
   pageCount += 1;
   document.querySelector('.question__num').textContent = "問題" + (pageCount + 1);
   if(sectionCount < 7){
-    document.querySelector('.counter').textContent = (pageCount + 1) + " / " + questionArray.length;
+    document.querySelector('.page-counter').textContent = (pageCount + 1) + " / " + questionArray.length;
   }else{
-    document.querySelector('.counter').textContent = (pageCount + 1) + " / " + 5;
+    document.querySelector('.page-counter').textContent = (pageCount + 1) + " / " + 5;
   }
 
   if (pageCount >= 4) {
@@ -145,7 +157,6 @@ function nextBtnClick() {
 
     // 新しいイベントリスナーを追加
     nextBtn.addEventListener('click', function() {
-      sessionStorage.setItem('sectionCount', sectionCount + 1);
       sessionStorage.setItem('correctCount', correctCount);
       window.location.href = './finish.html';  // 遷移先のページに遷移
     });
@@ -153,5 +164,13 @@ function nextBtnClick() {
   displayRandomOptions();
   displaySwitch();
 }
+
+document.querySelectorAll('.options').forEach(option => {
+  option.addEventListener('click', () => {
+    const button = document.querySelector('.button__standby');
+    button.classList.add('next');
+    button.classList.remove('button__standby');
+  });
+});
 
 
