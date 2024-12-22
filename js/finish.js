@@ -9,6 +9,7 @@ console.log("section: " + sectionCount);
 let nextCount = Number(sessionStorage.getItem('nextCount'));
 console.log("next: " + nextCount);
 
+
 document.querySelector('.button_Return').addEventListener('click', () => {
   event.preventDefault();
   if(nextCount > 0){
@@ -16,28 +17,41 @@ document.querySelector('.button_Return').addEventListener('click', () => {
     console.log(nextSection);
     sessionStorage.setItem('sectionCount', nextSection);
   }
-  window.location.href = "./section.html"
-});
-
-document.querySelector('.button_Next').addEventListener('click', () => {
-  event.preventDefault();
-  sessionStorage.setItem('sectionCount', nextSection);
-  nextCount += 1;
-  sessionStorage.setItem('nextCount', nextCount);
-  if(sectionCount == 6) {
+  if(sectionCount == 7){
     window.location.href = "./question.html"
-  }else {
+  } else {
     window.location.href = "./section.html"
   }
 });
 
+
+function nextClick(event) {
+  event.preventDefault();
+  
+  // sessionStorageに値をセット
+  sessionStorage.setItem('sectionCount', nextSection);
+  nextCount += 1;
+  sessionStorage.setItem('nextCount', nextCount);
+  
+  // 条件によって遷移先を変更
+  if (sectionCount == 6) {
+    window.location.href = "./question.html";
+  } else {
+    window.location.href = "./section.html";
+  }
+}
+
+var next = document.querySelector('.button_Next');
+next.addEventListener('click', nextClick);
+
+
 var message = '';
-if(correctCount > 3) {
-  messge = 'すごいですね！この調子でどんどん進めちゃいましょう！';
-}else if (correctCount > 1) {
+if(correctCount >= 4) {
+  message = 'すごいですね！この調子でどんどん進めちゃいましょう！';
+}else if (2 <= correctCount && correctCount < 4) {
   message = 'まずまずといったところですね。間違ったところを見返して、次に進みましょう！';
-}else if (correctCount = 1) {
-  message = 'まだまだですね。しっかりと復習をしてから、次へ進みましょう！';
+}else if (correctCount < 2) {
+  message = 'まだまだですね。しっかりと復習をしてから次へ進みましょう！';
 }
 document.querySelector('.feed-back__mesage').textContent = message;
 
@@ -56,6 +70,10 @@ if(sectionCount == 1) {
   sectionName = "Let's practice!";
 }else if (sectionCount == 7) {
   sectionName = "Let's practice again!";
+  next.removeEventListener('click', nextClick);
+  next.classList.remove("next");
+  next.style.backgroundColor = "#D9D9D9";
+  next.style.borderRadius = "5vw"
 }
 
 document.querySelector('.next-section').textContent = sectionName;

@@ -139,7 +139,7 @@ function nextBtnClick() {
   if (pageCount >= 4) {
     console.log("start");
     const nextBtn = document.getElementById('nextBtn');
-    nextBtn.textContent = "終了";
+    nextBtn.textContent = "Finish";
 
     // ランダムに0~9までの数字の中から5個生成
     const randomNumbers = new Set();
@@ -167,7 +167,8 @@ function nextBtnClick() {
 
 document.querySelectorAll('.options').forEach(option => {
   option.addEventListener('click', () => {
-    const button = document.querySelector('.button__standby');
+    var button = document.querySelector('.button__standby');
+    console.log(button);
     button.classList.add('next');
     button.classList.remove('button__standby');
   });

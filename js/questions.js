@@ -208,6 +208,7 @@ const questionData = [
     option2: 'Elementはクラス名にアンダースコアを１つ入れる',
     option3: 'ElementはBlock名と一緒に使わなければならない',
     option4: 'Elementは同じBlock内に複数存在してはいけない',
+    option5: 'Elementはレイアウトに関するスタイルを持つべきだ',
     explain: 'Elementでは、Elememtが別のElementの中に入るような命名は推奨されていません。これをしてしまうと、中のElementが外のElementに依存してしまい、”再利用性”が損なわれてしまいます。',
   },
 
